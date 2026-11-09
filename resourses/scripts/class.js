@@ -1,9 +1,10 @@
 export class admin {
-   name = "admin";
-   password = "admin123"
+    constructor() {
+        this.email = "admin@gmail.com";
+        this.senha = "123456";
+    }
 }
-
-export class user{
+export class users{
     constructor(name, cpf, email, password){
     this.name = name
     this.cpf = Number(cpf);
