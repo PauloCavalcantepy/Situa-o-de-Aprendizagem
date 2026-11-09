@@ -1,5 +1,5 @@
 import { admin } from "./class.js";
-import { users } from "./class.js";
+
 
 let email = document.querySelector("#email");
 let senha = document.querySelector("#senha");
@@ -15,8 +15,9 @@ form.addEventListener("submit", (e) => {
         senha.value === adminValido.senha
     ) {
         console.log("Admin");
-        alert("Deu certo!");
+        location.href = "main.html"
     } else {
         alert("E-mail ou senha incorretos!");
     }
 });
+

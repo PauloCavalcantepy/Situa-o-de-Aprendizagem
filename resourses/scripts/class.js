@@ -4,11 +4,11 @@ export class admin {
         this.senha = "123456";
     }
 }
-export class users{
+export class users {
     constructor(name, cpf, email, password){
     this.name = name
     this.cpf = Number(cpf);
-    this.email = email;
-    this.password =password;
+    this.email = new email;
+    this.password = new password;
     }
 }
