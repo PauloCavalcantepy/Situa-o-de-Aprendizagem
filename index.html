@@ -4,15 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amigos da Vizinhança</title>
-    <script src="resourses/scripts/main.js" defer type="module" ></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="resources/scripts/main.js" defer type="module"></script>
 </head>
 <body>
-    <form action="">
-        Nome<input id="" type="text">
-        CPF<input id="" type="text">
-        EMAIL<input id="" type="text">
-        SENHA<input id="" type="text">
+    <form id="formularioCadastro">
+        <div>
+            <label for="nomeCadastro">Nome:</label>
+            <input type="text" name="nome" id="nomeCadastro" required>
+        </div>
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div>
+            <label for="passwordCadastro">Senha:</label>
+            <input type="password" name="password" id="passwordCadastro" minlength="6" required>
+        </div>
+        <div>
+            <label for="cpfCadastro">CPF:</label>
+            <input type="text" name="cpf" id="cpfCadastro"
+                   inputmode="numeric" maxlength="14"
+                   placeholder="000.000.000-00" required>
+        </div>
+        <div>
+            <label for="telefoneCadastro">Número de telefone:</label>
+            <input type="tel" name="telefone" id="telefoneCadastro"
+                   placeholder="(68) 99999-9999" required>
+        </div>
+        <button type="submit">Enviar</button>
     </form>
 </body>
 </html>
