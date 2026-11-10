@@ -1,22 +1,23 @@
+
 import { admin } from "./class.js";
 
-let email = document.querySelector("#email");
-let senha = document.querySelector("#senha");
-let form = document.querySelector("#formularioLogin");
+let emailAdm = document.querySelector("#email");
+let senhaAdm = document.querySelector("#senha");
+let formADM = document.querySelector("#formularioLogin");
 
-form.addEventListener("submit", (e) => {
+formADM.addEventListener("submit", (e) => {
     e.preventDefault();
 
     let adminValido = new admin();
 
     if (
-        email.value.trim() === adminValido.email &&
-        senha.value === adminValido.senha
+        emailAdm.value.trim() === adminValido.email &&
+        senhaAdm.value === adminValido.senha
     ) {
         location.href = "main.html";
     } else {
         alert("E-mail ou senha incorretos!");
-        senha.value = "";
-        senha.focus();
+        senhaAdm.value = "";
+        senhaAdm.focus();
     }
 });

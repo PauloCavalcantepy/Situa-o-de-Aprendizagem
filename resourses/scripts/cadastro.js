@@ -1,25 +1,31 @@
-import { users, Cadastro } from "./class.js";
+import { Cadastro } from "./class.js";
 
-let formulario = document.getElementById("formularioCadastro");
+let nome = document.querySelector("#nomeCadastro");
+let email = document.querySelector("#emailCadastro");
+let senha = document.querySelector("#passwordCadastro");
+let cpf = document.querySelector("#cpfCadastro");
+let telefone = document.querySelector("#telefoneCadastro");
+let form = document.querySelector("#formularioCadastro");
 
-formulario.addEventListener("submit", (event) => {
-    event.preventDefault();
+let cadastro = new Cadastro();
 
-    let nome = document.getElementById("nomeCadastro").value.trim();
-    let cpf = document.getElementById("cpfCadastro").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let telefone = document.getElementById("telefoneCadastro").value.trim();
-    let senha = document.getElementById("passwordCadastro").value;
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-    let morador = new users(nome, cpf, email, telefone, senha);
-    let cadastro = new Cadastro();
+    // Cria o objeto com os dados do morador
+    let novoMorador = {
+        name: nome.value.trim(),
+        email: email.value.trim(),
+        password: senha.value,
+        cpf: cpf.value,
+        telefone: telefone.value.trim()
+    };
 
-    let salvou = cadastro.salvarMorador(morador);
+    // Salva o morador
+    let salvo = cadastro.salvarMorador(novoMorador);
 
-    if (salvou) {
-        formulario.reset();
-        
-    } else {
-        alert("Não foi possível salvar o cadastro. Verifique os dados.");
+    if (salvo) {
+        form.reset();
     }
 });
+
